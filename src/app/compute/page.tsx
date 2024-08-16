@@ -36,7 +36,7 @@ export default function Component() {
   };
 
   return (
-    <Card className="mt-15">
+    <Card className="">
       <CardHeader>
         <CardTitle>Traject carbon footprint</CardTitle>
         <CardDescription>Enter details about your traject to calculate your CO2 emission</CardDescription>

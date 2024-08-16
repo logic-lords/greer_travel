@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Sheet } from '@/components/ui/sheet'
 import { SheetTrigger } from '@/components/ui/sheet'
 import { SheetContent } from '@/components/ui/sheet'
-import { HiMenu } from 'react-icons/hi';
+import { HiLogout, HiMenu } from 'react-icons/hi';
 import Menu1 from './menu1'
 import Menu2 from './menu2'
 import { DropdownMenu } from '@/components/ui/dropdown-menu'
@@ -17,14 +17,14 @@ import { AvatarFallback } from '@/components/ui/avatar'
 import { DropdownMenuContent } from '@/components/ui/dropdown-menu'
 import { DropdownMenuItem } from '@/components/ui/dropdown-menu'
 import { DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
-import { HiLogout } from 'react-icons/hi'
+
 
 export default function NavBar() {
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center w-full fixed bg-white">
     <Link href="#" className="flex items-center justify-center" prefetch={false}>
       <LeafIcon className="size-6 text-primary" />
-      <span className="px-2 text-lg">Eco Explorers</span>
+      <span className="px-2 text-lg">Green Footprint</span>
     </Link>
 
 
