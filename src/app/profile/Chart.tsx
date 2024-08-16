@@ -18,12 +18,13 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "Lundi", desktop: 186 },
+  { month: "Mardi", desktop: 305 },
+  { month: "Mercredi", desktop: 237 },
+  { month: "Jeudi", desktop: 73 },
+  { month: "Vendredi", desktop: 209 },
+  { month: "Samedi", desktop: 214 },
+  { month: "Dimanche", desktop: 150 },
 ];
 
 const chartConfig = {

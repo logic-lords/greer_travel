@@ -1,11 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { JSX, SVGProps } from "react";
 
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/a8kNpYiwerf
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 export default function Activity() {
   return (
     <Card className="w-full mx-auto max-w-screen-sm  shadow-md ml-10 mt-6 ">
