@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 export default function Register() {
   return (
     <>
-      <div className="my- mx-auto max-w-screen-md mt-16 lg:grid lg:min-h-[600px] lg:grid-cols-2 shadow-md">
+      <div className="mx-auto max-w-screen-md lg:grid lg:min-h-[600px] lg:grid-cols-2 shadow-md">
         <div className="flex items-center justify-center py-12">
           <Card className="mx-auto grid w-[350px] gap-3 border-none">
             <CardHeader className="text-center">
