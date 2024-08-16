@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 export default function Login() {
   return (
     <section>
-      <div className="my-auto mx-auto mt-16 max-w-screen-md lg:grid lg:min-h-[600px] lg:grid-cols-2 shadow-md ">
+      <div className="my-auto mx-auto max-w-screen-md lg:grid lg:min-h-[600px] lg:grid-cols-2 shadow-md ">
         <div className="flex items-center justify-center">
           <Card className="mx-auto grid w-[350px] gap-3 border-none">
             <CardHeader className="text-center">
@@ -91,7 +91,7 @@ export default function Login() {
               <div className="mt-4 text-center text-sm">
                 Don't have an account?{" "}
                 <Link href="/auth/register" className="underline">
-                  Sign out
+                  Sign up
                 </Link>
               </div>
             </CardContent>
