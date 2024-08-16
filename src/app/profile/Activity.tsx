@@ -8,10 +8,10 @@ import { JSX, SVGProps } from "react";
  */
 export default function Activity() {
   return (
-    <Card className="w-full mx-auto max-w-screen-sm  shadow-md ml-10 mt-6">
+    <Card className="w-full mx-auto max-w-screen-sm  shadow-md ml-10 mt-6 ">
       <div className="container flex-col md:px-6">
         <div className="space-y-3 text-center">
-          <h2 className="max-w-[500px] text-xl font-bold tracking-tighter sm:text-4xl md:text-xl pt-6">
+          <h2 className="max-w-[500px] text-2xl font-bold tracking-tighter sm:text-5xl md:text-xl pt-6">
             Discover the activities you can do
           </h2>
         </div>
@@ -20,7 +20,7 @@ export default function Activity() {
             <MountainIcon className="h-8 w-8 text-primary" />
             <div>
               <h3 className="text-base font-semibold">Hiking</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-1xl text-muted-foreground">
                 Explore nature and enjoy the benefits of walking.
               </p>
             </div>

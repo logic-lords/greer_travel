@@ -11,16 +11,16 @@ import Activity from "./Activity";
 
 export default function Profile() {
   return (
-    <div className="flex flex-col min-h-[100vh]">
-      <header className="bg-gray-100 dark:bg-gray-800 py-2 px-1 md:px-6">
-        <div className="container mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8 justify-center">
-          <Avatar className="h-32 w-h-32 md:h-56 md:w-56 ">
+    <div className="flex flex-col min-h-[100vh] ">
+      <header className="bg-gray-100 dark:bg-gray-800 py-2  px-1 md:px-6">
+        <div className="container flex flex-col items-center gap-4 md:flex-row md:gap-8 justify-center">
+          <Avatar className="h-56 w-56 md:h-56 md:w-56 ">
             <AvatarImage alt="@shadcn" />
             <AvatarFallback>
               <Image
                 src={images}
                 alt={""}
-                className="h-32 w-h-32 md:h-56 md:w-56 object-cover"
+                className="h-56 w-56 md:h-56 md:w-56 object-cover"
               />
               <div className="absolute bottom-1 pb-1 right-15 z-50 xsm:bottom-4 xsm:right-4">
                 <label
@@ -72,7 +72,7 @@ export default function Profile() {
           </div>
         </div>
       </header>
-      <section className=" mx-auto flex-wrap flex column gap-8">
+      <section className=" mx-auto flex-wrap flex column gap-4 mb-6">
         <div className="flex-2">
           <ChartProfile />
         </div>
