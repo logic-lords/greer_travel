@@ -6,6 +6,7 @@ import Activity from "./components/Activity";
 
 
 export default function Profile() {
+  
   return (
     <div className="flex flex-col min-h-[100vh] ">
       <header className="bg-gray-100 dark:bg-gray-800 py-2  px-1 md:px-6">

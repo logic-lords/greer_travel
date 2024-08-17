@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import { redirect } from "next/navigation";
-
 
 export default async function registerLayout({
   children,
