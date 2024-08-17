@@ -1,12 +1,11 @@
 "use client";
 
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
-
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -16,37 +15,41 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
-const chartData = [
-  { month: "Lundi", desktop: 186 },
-  { month: "Mardi", desktop: 305 },
-  { month: "Mercredi", desktop: 237 },
-  { month: "Jeudi", desktop: 73 },
-  { month: "Vendredi", desktop: 209 },
-  { month: "Samedi", desktop: 214 },
-  { month: "Dimanche", desktop: 150 },
-];
+import { fetchWeeklyCO2Emissions } from "@/providers/profile"; // Fetch function to get CO2 data
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "CO2 Emission",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig;
 
 export function ChartProfile() {
+  const [chartData, setChartData] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function getChartData() {
+      const userId = localStorage.getItem("userId");
+      if (userId) {
+        const co2Data = await fetchWeeklyCO2Emissions(userId);
+        setChartData(co2Data);
+      }
+    }
+    getChartData();
+  }, []);
+
   return (
-    <Card className="w-full mx-auto max-w-screen-sm  shadow-md ml-10 mt-6">
+    <Card className="w-full mx-auto max-w-screen-sm shadow-md ml-10 mt-6">
       <CardHeader>
-        <CardTitle>Bar Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Weekly CO2 Emissions</CardTitle>
+        <CardDescription>Your CO2 emissions for the week</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <BarChart accessibilityLayer data={chartData} margin={{ top: 20 }}>
+          <BarChart data={chartData} margin={{ top: 20 }}>
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
+              dataKey="day"
               tickLine={false}
               tickMargin={10}
               axisLine={false}
@@ -56,8 +59,7 @@ export function ChartProfile() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="green" radius={8}>
-              {" "}
+            <Bar dataKey="co2" fill="green" radius={8}>
               <LabelList
                 position="top"
                 offset={12}

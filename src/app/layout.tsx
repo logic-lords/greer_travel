@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBarMenu } from "@/components/NavBarMenu";
+import { checkUserAuthenticated } from "@/providers/auth";
+import { NavBarMenuHome } from "./home/components/NavBarHome";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   description: "Calculate CO2 emisions",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

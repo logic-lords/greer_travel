@@ -9,10 +9,7 @@ export default async function ProfileLayout({
 }: {
   children: ReactNode;
 }) {
-//   const session = await getServerSession(authOptions);
-//   if (!session) {
-//     return redirect("/login");
-//   }
+
   return (
     <>
       <NavBarMenu/>

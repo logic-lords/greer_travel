@@ -9,10 +9,10 @@ export default async function ComputeLayout({
 }: {
   children: ReactNode;
 }) {
-//   const session = await getServerSession(authOptions);
-//   if (!session) {
-//     return redirect("/login");
-//   }
+  // const session = localStorage.getItem('userId');
+  // if (!session) {
+  //   return redirect("/login");
+  // }
   return (
     <>
       <NavBarMenu/>

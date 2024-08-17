@@ -1,41 +1,98 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client"
+
 import React from "react";
-import img from "../../../../public/images/header-2.jpeg";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { registerUser, RegisterUserData } from "@/providers/auth";
+import Link from "next/link";
+import { redirect, useRouter } from "next/navigation";
+
+// Zod schema for form validation
+const registerSchema = z.object({
+  first_name: z.string().min(1, "First name is required"),
+  last_name: z.string().min(1, "Last name is required"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+  passwordConfirm: z.string().min(8, "Password confirmation is required"),
+}).refine((data) => data.password === data.passwordConfirm, {
+  message: "Passwords don't match",
+  path: ["passwordConfirm"], // Path of error
+});
+
+type RegisterFormInputs = z.infer<typeof registerSchema>;
 
 export default function Register() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormInputs>({
+    resolver: zodResolver(registerSchema),
+  });
+  
+  const router = useRouter()
+  const onSubmit: SubmitHandler<RegisterFormInputs> = async (data) => {
+    const userData: RegisterUserData = {
+      username: data.email.split("@")[0],
+      email: data.email,
+      emailVisibility: true,
+      password: data.password,
+      passwordConfirm: data.passwordConfirm,
+      first_name: data.first_name,
+      last_name: data.last_name,
+    };
+    await registerUser(userData);
+      router.push("/login")
+  };
+
   return (
     <section>
       <div className="flex items-center justify-center min-h-screen">
-          <Card className="mx-auto grid w-[400px] gap-3 border border-gray-300 p-4">
-            <CardHeader className="text-center">
-              <CardTitle className="text-xl">Sign Up to Green footprint</CardTitle>
-              <CardDescription>
-                Enter your information to create an account
-              </CardDescription>
-            </CardHeader>
+        <Card className="mx-auto grid w-[400px] gap-3 border border-gray-300 p-4">
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Sign Up to Green Footprint</CardTitle>
+            <CardDescription>
+              Enter your information to create an account
+            </CardDescription>
+          </CardHeader>
 
-            <CardContent>
+          <CardContent>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="grid gap-2">
                     <Label htmlFor="first-name">First name</Label>
-                    <Input id="first-name" placeholder="Max" required />
+                    <Input
+                      id="first-name"
+                      placeholder="Max"
+                      {...register("first_name")}
+                      className="p-2"
+                    />
+                    {errors.first_name && (
+                      <p className="text-red-500 text-sm">
+                        {errors.first_name.message}
+                      </p>
+                    )}
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="last-name">Last name</Label>
-                    <Input id="last-name" placeholder="Robinson" required />
+                    <Input
+                      id="last-name"
+                      placeholder="Robinson"
+                      {...register("last_name")}
+                      className="p-2"
+                    />
+                    {errors.last_name && (
+                      <p className="text-red-500 text-sm">
+                        {errors.last_name.message}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="grid gap-2">
@@ -44,57 +101,43 @@ export default function Register() {
                     id="email"
                     type="email"
                     placeholder="m@example.com"
-                    required
+                    {...register("email")}
+                    className="p-2"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm">{errors.email.message}</p>
+                  )}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" type="password" />
+                  <Input
+                    id="password"
+                    type="password"
+                    {...register("password")}
+                    className="p-2"
+                  />
+                  {errors.password && (
+                    <p className="text-red-500 text-sm">
+                      {errors.password.message}
+                    </p>
+                  )}
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="passwordConfirm">Confirm Password</Label>
+                  <Input
+                    id="passwordConfirm"
+                    type="password"
+                    {...register("passwordConfirm")}
+                    className="p-2"
+                  />
+                  {errors.passwordConfirm && (
+                    <p className="text-red-500 text-sm">
+                      {errors.passwordConfirm.message}
+                    </p>
+                  )}
                 </div>
                 <Button type="submit" className="w-full">
                   Create an account
-                </Button>
-                <Button variant="outline" className="w-full">
-                  <span className="pr-3">
-                    <svg
-                      width="30px"
-                      height="30px"
-                      viewBox="0 0 32 32"
-                      data-name="Layer 1"
-                      id="Layer_1"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M23.75,16A7.7446,7.7446,0,0,1,8.7177,18.6259L4.2849,22.1721A13.244,13.244,0,0,0,29.25,16"
-                        fill="#00ac47"
-                      />
-                      <path
-                        d="M23.75,16a7.7387,7.7387,0,0,1-3.2516,6.2987l4.3824,3.5059A13.2042,13.2042,0,0,0,29.25,16"
-                        fill="#4285f4"
-                      />
-                      <path
-                        d="M8.25,16a7.698,7.698,0,0,1,.4677-2.6259L4.2849,9.8279a13.177,13.177,0,0,0,0,12.3442l4.4328-3.5462A7.698,7.698,0,0,1,8.25,16Z"
-                        fill="#ffba00"
-                      />
-                      <polygon
-                        fill="#2ab2db"
-                        points="8.718 13.374 8.718 13.374 8.718 13.374 8.718 13.374"
-                      />
-                      <path
-                        d="M16,8.25a7.699,7.699,0,0,1,4.558,1.4958l4.06-3.7893A13.2152,13.2152,0,0,0,4.2849,9.8279l4.4328,3.5462A7.756,7.756,0,0,1,16,8.25Z"
-                        fill="#ea4435"
-                      />
-                      <polygon
-                        fill="#2ab2db"
-                        points="8.718 18.626 8.718 18.626 8.718 18.626 8.718 18.626"
-                      />
-                      <path
-                        d="M29.25,15v1L27,19.5H16.5V14H28.25A1,1,0,0,1,29.25,15Z"
-                        fill="#4285f4"
-                      />
-                    </svg>
-                  </span>
-                  Continue with google
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
@@ -103,9 +146,10 @@ export default function Register() {
                   Sign in
                 </Link>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 }
