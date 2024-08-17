@@ -14,7 +14,6 @@ export default function Component() {
         <Tips />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }
