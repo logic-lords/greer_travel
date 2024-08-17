@@ -16,12 +16,11 @@ import { Label } from "@/components/ui/label";
 
 export default function Register() {
   return (
-    <>
-      <div className="mt-5 mx-auto max-w-screen-md lg:grid lg:min-h-[600px] lg:grid-cols-2 shadow-md">
-        <div className="flex items-center justify-center py-12">
-          <Card className="mx-auto grid w-[350px] gap-3 border-none">
+    <section>
+      <div className="flex items-center justify-center min-h-screen">
+          <Card className="mx-auto grid w-[400px] gap-3 border border-gray-300 p-4">
             <CardHeader className="text-center">
-              <CardTitle className="text-xl">Sign Up</CardTitle>
+              <CardTitle className="text-xl">Sign Up to Green footprint</CardTitle>
               <CardDescription>
                 Enter your information to create an account
               </CardDescription>
@@ -100,24 +99,13 @@ export default function Register() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Already have an account?{" "}
-                <Link href="/auth/login" className="underline">
+                <Link href="/login" className="underline">
                   Sign in
                 </Link>
               </div>
             </CardContent>
           </Card>
         </div>
-
-        <div className="hidden bg-muted lg:block">
-          <Image
-            src={img}
-            alt="Image"
-            width="1920"
-            height="1080"
-            className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-          />
-        </div>
-      </div>
-    </>
+    </section>
   );
 }

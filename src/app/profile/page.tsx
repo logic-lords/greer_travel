@@ -1,8 +1,9 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import images from "../../../public/images/header-2.jpeg";
 import Image from "next/image";
-import { ChartProfile } from "./Chart";
-import Activity from "./Activity";
+import { ChartProfile } from "./components/Chart";
+import Activity from "./components/Activity";
+
 
 export default function Profile() {
   return (

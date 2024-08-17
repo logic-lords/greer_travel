@@ -4,7 +4,7 @@ import Footer from "../home/components/footer";
 import { NavBarMenu } from "@/components/NavBarMenu";
 
 
-export default async function ComputeLayout({
+export default async function ProfileLayout({
   children,
 }: {
   children: ReactNode;
