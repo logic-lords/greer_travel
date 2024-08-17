@@ -3,7 +3,7 @@ import Discover from "./components/discover";
 import About from "./components/about";
 import Tips from "./components/tips";
 import Contact from "./components/contact";
-import Footer from "./components/footer";
+
 
 export default function Component() {
   return (
@@ -14,7 +14,6 @@ export default function Component() {
         <Tips />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }

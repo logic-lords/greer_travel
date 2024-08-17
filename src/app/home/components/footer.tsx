@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer className="bg-muted text-muted-foreground p-6 md:py-12 w-full">
+    <footer className="bg-muted text-muted-foreground p-6 md:py-12 w-full mt-5">
     <div className="container max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
       <div className="grid gap-1">
         <h3 className="font-semibold">Explore</h3>
