@@ -47,7 +47,7 @@ export function NavBarMenuHome({ isAuthenticated, user }: NavBarMenuHomeProps) {
               href="/activity"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              Compenser
+              compensate
             </Link>
           </>
         )}

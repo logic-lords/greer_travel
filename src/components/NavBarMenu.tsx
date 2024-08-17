@@ -41,7 +41,7 @@ export function NavBarMenu() {
             href="/activity"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Compenser
+            compensate
           </Link>
         </nav>
         <Sheet>

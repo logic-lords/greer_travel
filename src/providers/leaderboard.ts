@@ -135,7 +135,7 @@ export async function fetchLeaderboardData() {
 
         // Step 2: Group emissions by user and sum them for today
         const co2Map = {};
-        emissionResponse.data.items.forEach((item) => {
+        emissionResponse.data.items.forEach((item :any) => {
             if (!co2Map[item.user_id]) {
                 co2Map[item.user_id] = 0;
             }
