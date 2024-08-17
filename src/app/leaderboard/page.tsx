@@ -3,13 +3,13 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 export default function Leaderboard() {
   const leaderboardData = [
     {
-      avatar: "/images/avatar1.jpeg",
+      avatar: "/images/avatar1.png",
       name: "John Doe",
       co2Savings: "1.2 kg/CO2",
     },
     {
-      avatar: "/images/avatar2.jpeg",
-      name: "Jane Appleseed",
+      avatar: "/images/avatar2.png",
+      name: "James Appleseed",
       co2Savings: "1.5 kg/CO2",
     },
     {
