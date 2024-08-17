@@ -22,7 +22,7 @@ export function NavBarMenuHome({ isAuthenticated } : NavBarMenuHomeProps) {
                   <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                   <Link href="/home" className="flex items-center justify-center" prefetch={false}>
                     <LeafIcon className="size-12 text-primary" />
-                    <span className="px-2 text-sm">Green Footprint</span>
+                    <span className="px-2 text-sm">Green Foot</span>
                   </Link>
                   <Link
                     href="/compute"
@@ -47,7 +47,7 @@ export function NavBarMenuHome({ isAuthenticated } : NavBarMenuHomeProps) {
             <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
             <Link href="/home" className="flex items-center justify-center" prefetch={false}>
               <LeafIcon className="size-12 text-primary" />
-              <span className="px-2 text-sm">Green Footprint</span>
+              <span className="px-2 text-sm">Green Foot</span>
             </Link>
           </nav>
         )}
@@ -69,7 +69,7 @@ export function NavBarMenuHome({ isAuthenticated } : NavBarMenuHomeProps) {
               className="flex items-center gap-2 text-lg font-semibold"
             >
               <LeafIcon className="size-12 text-primary" />
-              <span className="sr-only">Green Footprint</span>
+              <span className="sr-only">Green Foot</span>
             </Link>
             <Link
               href="/compute"

@@ -1,4 +1,4 @@
-export default function Componser() {
+export default function Compenser() {
   return (
     <section className="flex-col">
       <div className="w-full py-12 md:py-24 lg:py-7">
