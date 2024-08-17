@@ -1,15 +1,17 @@
+"use client";
+import { Button } from "@/components/ui/button";
 import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
-export default async function registerLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function AuthLayout({ children }: { children: ReactNode }) {
+  const router = useRouter();
+
   return (
-    <>
-      <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {children}
-      </main>
-    </>
+    <div>
+      <div className="">
+        <Button onClick={() => router.push("/home")}>Retour à l'accueil</Button>
+      </div>
+      {children}
+    </div>
   );
 }

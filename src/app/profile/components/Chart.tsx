@@ -29,16 +29,16 @@ const chartData = [
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "CO2",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig;
 
 export function ChartProfile() {
   return (
-    <Card className="w-full mx-auto max-w-screen-sm  shadow-md ml-10 mt-6">
+    <Card className="w-full mx-auto max-w-screen-sm  shadow-md mt-6">
       <CardHeader>
-        <CardTitle>Bar Chart - Label</CardTitle>
+        <CardTitle>Emission en Kg/j</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>

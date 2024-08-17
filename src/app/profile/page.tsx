@@ -4,12 +4,10 @@ import Image from "next/image";
 import { ChartProfile } from "./components/Chart";
 import Activity from "./components/Activity";
 
-
 export default function Profile() {
-  
   return (
-    <div className="flex flex-col min-h-[100vh] ">
-      <header className="bg-gray-100 dark:bg-gray-800 py-2  px-1 md:px-6">
+    <div className="flex flex-col min-h-[100vh] w-full shadow-md mb-5">
+      <header className="bg-gray-100 dark:bg-gray-800 py-2 md:px-6">
         <div className="container flex flex-col items-center gap-4 md:flex-row md:gap-8 justify-center">
           <Avatar className="h-56 w-56 md:h-56 md:w-56 ">
             <AvatarImage alt="@shadcn" />
@@ -69,7 +67,7 @@ export default function Profile() {
           </div>
         </div>
       </header>
-      <section className=" mx-auto flex-wrap flex column gap-4 mb-6">
+      <section className=" mx-auto flex-wrap flex column gap-4">
         <div className="flex-2">
           <ChartProfile />
         </div>
