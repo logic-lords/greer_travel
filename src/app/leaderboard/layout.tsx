@@ -4,7 +4,7 @@ import Footer from "../home/components/footer";
 import { NavBarMenu } from "@/components/NavBarMenu";
 
 
-export default async function ComputeLayout({
+export default async function LeaderboardLayout({
   children,
 }: {
   children: ReactNode;
@@ -15,7 +15,7 @@ export default async function ComputeLayout({
 //   }
   return (
     <>
-      <NavBarMenu/>
+     <NavBarMenu/>
       <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8 mt-10">
         {children}
       </main>
