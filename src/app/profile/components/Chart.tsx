@@ -36,7 +36,7 @@ const chartConfig = {
 
 export function ChartProfile() {
   return (
-    <Card className="w-full mx-auto max-w-screen-sm  shadow-md mt-6">
+    <Card className="w-full mx-auto max-w-screen-sm  shadow-md mt-6 pb-4">
       <CardHeader>
         <CardTitle>Emission en Kg/j</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

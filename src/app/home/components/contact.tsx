@@ -24,13 +24,12 @@ export default function Contact() {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Use correct IDs from your EmailJS account
     emailjs
       .sendForm(
-        "Contact", // Replace with your EmailJS Service ID
-        "hei.maria.625@gmail.com", // Replace with your EmailJS Template ID
+        "Contact",
+        "hei.maria.625@gmail.com",
         e.target as HTMLFormElement,
-        "hei.maria.625@gmail.com" // Replace with your EmailJS User ID
+        "hei.maria.625@gmail.com"
       )
       .then(
         (result) => {
@@ -43,7 +42,7 @@ export default function Contact() {
         }
       );
 
-    (e.target as HTMLFormElement).reset(); // Reset the form
+    (e.target as HTMLFormElement).reset();
   };
 
   return (

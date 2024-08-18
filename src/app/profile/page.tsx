@@ -67,8 +67,8 @@ export default function Profile() {
           </div>
         </div>
       </header>
-      <section className=" mx-auto flex-wrap flex column gap-4">
-        <div className="flex-2">
+      <section className="flex-wrap flex column">
+        <div className="flex-1">
           <ChartProfile />
         </div>
         <div className="flex-1">

@@ -3,7 +3,7 @@ import { JSX, SVGProps } from "react";
 
 export default function Activity() {
   return (
-    <Card className="w-full mx-auto max-w-screen-sm  shadow-md mt-6 pb-4 ">
+    <Card className="w-full mx-auto max-w-screen-sm  shadow-md mt-6 pb-9">
       <div className="container flex-col md:px-6">
         <div className="space-y-3 text-center">
           <h2 className="max-w-[500px] text-2xl font-bold tracking-tighter sm:text-5xl md:text-xl pt-6">
